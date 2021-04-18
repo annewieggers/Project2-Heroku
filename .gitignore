@@ -127,3 +127,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Mac documents
+.DS_store
+.DS_store_
+
+# Postgres details
+login_details.py
+
+# postgres details again
+login.py
+
+# API key
+config.js
+
+
