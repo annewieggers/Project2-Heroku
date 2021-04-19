@@ -2,6 +2,9 @@
 var svgWidth = 960;
 var svgHeight = 500;
 
+//  variable for API key 
+var API_KEY = process.env.API_KEY
+
 // Selecting the "scatter" id, appending SVG area to it, and setting its dimensions
 var svg = d3.select("#map")
     .append("svg")
