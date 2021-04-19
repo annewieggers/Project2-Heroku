@@ -32,15 +32,16 @@ app = Flask(__name__)
 #################################################
 
 from flask_sqlalchemy import SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') 
-# or "sqlite:///db.sqlite"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace("://", "ql://", 1) or "sqlite:///db.sqlite"
 
 db = SQLAlchemy(app)
 
 # Connecting to database
 
-rds_connection_string = f"{username}:{password}@localhost:5432/project_2"
-engine = create_engine(f'postgresql://{rds_connection_string}')
+# rds_connection_string = f"{username}:{password}@localhost:5432/project_2"
+# engine = create_engine(f'postgresql://{rds_connection_string}')
+
+engine = create_engine(f'postgres://{username}:{password}@ec2-23-22-191-232.compute-1.amazonaws.com:5432/d6cjclnqpohjpl')
 
 names = engine.table_names()
 
