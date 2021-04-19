@@ -19,9 +19,10 @@ from flask import (
     redirect)
 import simplejson
 from flask_sqlalchemy import SQLAlchemy
-from login import username
-from login import password
-
+# from login import username
+# from login import password
+username = os.environ['username'] 
+password = os.environ['password']
 
 # Setting up our Flask application.
 app = Flask(__name__)
