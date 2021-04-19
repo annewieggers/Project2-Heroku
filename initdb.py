@@ -3,7 +3,8 @@ from sqlalchemy import create_engine, Table, Column, Float, Integer, String, Met
 
 meta = MetaData()
 
-connection = os.environ.get('DATABASE_URL', '') or "sqlite:///db.sqlite"
+connection = os.environ.get('DATABASE_URL', '') 
+# or "sqlite:///db.sqlite"
 
 print("connection to databse")
 engine = create_engine(connection)
